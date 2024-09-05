@@ -8,6 +8,11 @@ if (!process.env.PORT) {
 }
 const port = process.env.PORT;
 
+if (!process.env.SPREADSHEETID) {
+  throw new Error("Err: No spreadsheet");
+}
+const spreadsheetID = process.env.SPREADSHEETID;
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
