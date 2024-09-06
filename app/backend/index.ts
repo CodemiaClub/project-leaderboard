@@ -44,6 +44,7 @@ async function getData() {
 
 app.get("/", async (req, res) => {
   try {
+    res.header("Access-Control-Allow-Origin", "*");
     const data = await getData();
     console.log(data);
     res.status(200).json(data);
