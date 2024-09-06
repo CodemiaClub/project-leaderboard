@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "dotenv node build/index",
     "dev:watch": "dotenv node --watch build/index",
+    "format": "npx prettier . --write",
     "tsc": "npx tsc"
   },
   "keywords": [],
