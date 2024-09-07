@@ -4,7 +4,6 @@ import { google } from "googleapis";
 import { error } from "node:console";
 import * as path from "node:path";
 
-
 const app = express();
 
 if (!process.env.PORT) {
@@ -34,8 +33,8 @@ async function fetSheet() {
 
 async function fetchFormattedData() {
   const rawData = await fetSheet();
-  if (!Array.isArray(rawData)){
-    throw new Error("Error: La spreadsheet esta vacía")
+  if (!Array.isArray(rawData)) {
+    throw new Error("Error: La spreadsheet esta vacía");
   }
   const [header, ...rows] = rawData;
   const formattedData = rows.map((row) => {
