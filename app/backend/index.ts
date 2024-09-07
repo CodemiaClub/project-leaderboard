@@ -37,8 +37,7 @@ async function fetchFormattedData() {
   if (!Array.isArray(rawData)){
     throw new Error("Error: La spreadsheet esta vacía")
   }
-  const header = rawData![0];
-  const rows = rawData!.slice(1);
+  const [header, ...rows] = rawData;
   const formattedData = rows.map((row) => {
     return Object.fromEntries(header.map((key, index) => [key, row[index]]));
   });
