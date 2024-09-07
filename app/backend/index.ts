@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express, { raw } from "express";
 import { google } from "googleapis";
+import { error } from "node:console";
 import * as path from "node:path";
 
 
@@ -33,6 +34,9 @@ async function fetSheet() {
 
 async function fetchFormattedData() {
   const rawData = await fetSheet();
+  if (!Array.isArray(rawData)){
+    throw new Error("Error: La spreadsheet esta vacía")
+  }
   const header = rawData![0];
   const rows = rawData!.slice(1);
   const formattedData = rows.map((row) => {
