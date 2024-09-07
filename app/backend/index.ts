@@ -27,7 +27,7 @@ async function fetSheet() {
   const sheets = google.sheets({ version: "v4", auth });
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: spreadsheetID,
-    range: "Totales",
+    range: "Totales!A:Z",
   });
   return response.data.values;
 }
