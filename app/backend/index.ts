@@ -18,7 +18,7 @@ const spreadsheetID = process.env.SPREADSHEETID;
 
 const keyFilePath = path.join(__dirname, "../keys.json");
 
-async function accessSheet() {
+async function fetSheet() {
   const auth = new google.auth.GoogleAuth({
     keyFile: keyFilePath,
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
@@ -31,8 +31,8 @@ async function accessSheet() {
   return response.data.values;
 }
 
-async function getData() {
-  const rawData = await accessSheet();
+async function fetchFormattedData() {
+  const rawData = await fetSheet();
   const header = rawData![0];
   const rows = rawData!.slice(1);
   const formattedData = rows.map((row) => {
@@ -45,7 +45,7 @@ async function getData() {
 app.get("/", async (req, res) => {
   try {
     res.header("Access-Control-Allow-Origin", "*");
-    const data = await getData();
+    const data = await fetchFormattedData();
     console.log(data);
     res.status(200).json(data);
   } catch (error) {
