@@ -15,16 +15,13 @@ if (!process.env.SPREADSHEETID) {
   throw new Error("Err: No spreadsheet");
 }
 
-if (!process.env.GOOGLE_CREDENTIALS) {
+if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
   throw new Error("Err: No path to credentials found")
 }
 const spreadsheetID = process.env.SPREADSHEETID;
 
-const keyFilePath = path.join(__dirname, process.env.GOOGLE_CREDENTIALS);
-
 async function fetSheet() {
   const auth = new google.auth.GoogleAuth({
-    keyFile: keyFilePath,
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
   const sheets = google.sheets({ version: "v4", auth });
