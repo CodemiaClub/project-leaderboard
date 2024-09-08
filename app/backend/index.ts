@@ -1,8 +1,6 @@
 import "dotenv/config";
 import express, { raw } from "express";
 import { google } from "googleapis";
-import { error } from "node:console";
-import * as path from "node:path";
 
 const app = express();
 
