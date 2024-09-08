@@ -20,7 +20,7 @@ if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
 }
 const spreadsheetID = process.env.SPREADSHEETID;
 
-async function fetSheet() {
+async function fetchSheet() {
   const auth = new google.auth.GoogleAuth({
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
@@ -33,7 +33,7 @@ async function fetSheet() {
 }
 
 async function fetchFormattedData() {
-  const rawData = await fetSheet();
+  const rawData = await fetchSheet();
   if (!Array.isArray(rawData)) {
     throw new Error("Error: La spreadsheet esta vacía");
   }
