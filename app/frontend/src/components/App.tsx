@@ -7,7 +7,7 @@ export const App = () => {
         <main className="flex justify-center items-center h-screen">
           <section className="bg-slate-300 min-w-8/12 sm:w-2/4 md:w-2/4 h-3/4 flex-col mb-20 rounded-lg p-4"></section>
         </main>
-        <Footer></Footer>
+        <Footer/>
       </div>
     </>
   );
