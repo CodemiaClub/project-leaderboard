@@ -1,6 +1,9 @@
 {
   "name": "frontend",
   "version": "1.0.0",
+  "imports": {
+    "#assets/*": "./assets/*"
+  },
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
@@ -10,13 +13,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@types/react": "^18.3.4",
-    "@types/react-dom": "^18.3.0",
     "parcel": "^2.12.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@types/node": "^22.5.4",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "file-loader": "^6.2.0",
     "postcss": "^8.4.41",
     "prettier": "3.3.3",
     "process": "^0.11.10",
