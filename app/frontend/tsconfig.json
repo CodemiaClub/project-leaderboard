@@ -3,12 +3,8 @@
     "module": "ESNext",
     "target": "ESNext",
     "moduleResolution": "Node",
-    "lib": [
-      "DOM",
-      "ESNext"
-    ],
+    "lib": ["DOM", "ESNext"],
     "jsx": "react-jsx",
-    "baseUrl": "./src",
-
+    "baseUrl": "./src"
   }
 }
