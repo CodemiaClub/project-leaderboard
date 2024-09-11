@@ -16,9 +16,9 @@ const CardContent = () => {
         <p className="font-medium w-1/3 text-center">Nombre</p>
         <p className="font-medium w-1/3 text-center">COINS</p>
       </div>
-      <div className="Entries-Container">
-        <div className="Entry border-solid border-slate-500 border-2 w-full h-10 mt-3 mb-3 flex flex-row justify-around items-center text-lg hover:bg-red-500 duration-300"></div>
-        <div className="Entry border-solid border-slate-500 border-2 w-full h-10 mt-3 mb-3 flex flex-row justify-around items-center text-lg hover:bg-red-500 duration-300"></div>
+      <div>
+        <div className="border-solid border-slate-500 border-2 w-full h-10 mt-3 mb-3 flex flex-row justify-around items-center text-lg hover:bg-red-500 duration-300"></div>
+        <div className="border-solid border-slate-500 border-2 w-full h-10 mt-3 mb-3 flex flex-row justify-around items-center text-lg hover:bg-red-500 duration-300"></div>
       </div>
     </>
   );
