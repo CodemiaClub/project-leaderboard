@@ -1,7 +1,7 @@
 const CardContent = () => {
   return (
     <>
-      <div className="Titles">
+      <div>
         <h1 className="font-bold text-center text-5xl mb-5 mt-7">
           Leaderboard
         </h1>
