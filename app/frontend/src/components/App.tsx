@@ -1,5 +1,6 @@
 import CardContent from "./CardContent";
 import Footer from "./Footer";
+import CardContent from "./CardContent";
 
 export const App = () => {
   return (
