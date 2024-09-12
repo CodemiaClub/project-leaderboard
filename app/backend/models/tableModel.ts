@@ -36,27 +36,19 @@ async function fetchFormattedData() {
 
 export class TableModel {
   static async getAll() {
-    try {
-      const data = await fetchFormattedData();
-      return data;
-    } catch (error) {
-      throw new Error("Error at fetching data from model");
-    }
+    const data = await fetchFormattedData();
+    return data;
   }
   static async getByPosition() {
-    try {
-      const data = await TableModel.getAll();
-      const membersByPosition = data
-        .sort((a, b) => b.Totales - a.Totales)
-        .map((member, index) => ({
-          position: index + 1,
-          name: member.Quien,
-          coins: member.Totales,
-        }));
+    const data = await TableModel.getAll();
+    const membersByPosition = data
+      .sort((a, b) => b.Totales - a.Totales)
+      .map((member, index) => ({
+        position: index + 1,
+        name: member.Quien,
+        coins: member.Totales,
+      }));
 
-      return membersByPosition;
-    } catch (error) {
-      throw new Error("Error at fetching data from model");
-    }
+    return membersByPosition;
   }
 }

@@ -4,5 +4,5 @@ export const notFoundMiddleware = (
   res: Response,
   next: NextFunction,
 ) => {
-  res.status(404).json({ message: "Not Found" });
+  res.status(404);
 };
