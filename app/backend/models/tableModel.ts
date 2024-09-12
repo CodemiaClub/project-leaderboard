@@ -1,11 +1,11 @@
 import { google } from "googleapis";
 
 if (!process.env.SPREADSHEETID) {
-  throw new Error("Err: No spreadsheet");
+  throw new Error("No SPREADSHEETID found");
 }
 
 if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-  throw new Error("Error: No path to credentials found");
+  throw new Error("No path to credentials found");
 }
 const spreadsheetID = process.env.SPREADSHEETID;
 
