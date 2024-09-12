@@ -1,7 +1,7 @@
 import Row from "./Row";
 
 const CardContent = () => {
-  interface Codemmials {
+  interface IUser {
     name: string;
     position: number;
     coins: number;
