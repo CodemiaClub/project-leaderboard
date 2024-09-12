@@ -7,11 +7,11 @@ const Row = ({ member }) => {
     <>
       <div className="w-1/3 flex flex-row align-middle justify-start ml-2">
         <TrophyICon />
-        <p className="font-bold w-1/3 text-center ">{position}</p>
+        <p className="font-bold w-1/3 text-start ml-2 ">{position}</p>
       </div>
       <p className="font-bold w-1/4 text-center ">{name}</p>
       <div className="w-1/3 flex flex-row align-middle justify-end mr-4">
-        <p className="font-bold w-1/2 text-center ">{coins}</p>
+        <p className="font-bold w-1/3 text-center ">{coins}</p>
         <CoinsIcon />
       </div>
     </>

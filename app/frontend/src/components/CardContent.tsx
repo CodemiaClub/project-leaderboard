@@ -1,18 +1,18 @@
 import Row from "./Row";
 
-  const CardContent = () => {
-    interface Codemmials {
-      name: string;
-      position: number;
-      coins: number;
-    }
-  
-    const MEMBERS: Codemmials[] = [
-      { name: "Gracimar", position: 1, coins: 100 },
-      { name: "Pechu", position: 2, coins: 50 },
-      { name: "Coqui", position: 3, coins: 20 },
-    ];
-  
+const CardContent = () => {
+  interface Codemmials {
+    name: string;
+    position: number;
+    coins: number;
+  }
+
+  const MEMBERS: Codemmials[] = [
+    { name: "Gracimar", position: 1, coins: 100 },
+    { name: "Pechu", position: 2, coins: 50 },
+    { name: "Coqui", position: 3, coins: 20 },
+  ];
+
   return (
     <>
       <div>
@@ -27,8 +27,8 @@ import Row from "./Row";
       </div>
       <div className="flex flex-row w-full justify-around mt-20 items-center text-xl">
         <p className="font-medium w-1/3 text-start ml-2">Posición</p>
-        <p className="font-medium w-1/3 text-center">Nombre</p>
-        <p className="font-medium w-1/3 text-center">COINS</p>
+        <p className="font-medium w-1/3 text-center ml-4">Nombre</p>
+        <p className="font-medium w-1/3 text-right mr-8">COINS</p>
       </div>
       <div>
         {MEMBERS.map((member) => (
