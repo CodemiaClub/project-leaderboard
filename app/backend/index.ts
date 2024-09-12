@@ -1,6 +1,5 @@
 import "dotenv/config";
 import express, { Express } from "express";
-import { corsMiddleware } from "./middlewares/corsMiddleware";
 import { notFoundMiddleware } from "./middlewares/notFoundMiddleware";
 import { tableRouter } from "./routes/tableRouter";
 
@@ -10,7 +9,6 @@ if (!process.env.PORT) {
   throw new Error("Env PORT must be set");
 }
 const port = process.env.PORT;
-app.use(corsMiddleware);
 app.use("/table", tableRouter);
 app.use(notFoundMiddleware);
 
