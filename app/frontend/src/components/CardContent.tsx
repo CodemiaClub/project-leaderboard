@@ -1,17 +1,11 @@
 import Row from "./Row";
 
 const CardContent = () => {
-  interface Codemmials {
+  interface IUser {
     name: string;
     position: number;
     coins: number;
   }
-
-  const MEMBERS: Codemmials[] = [
-    { name: "Gracimar", position: 1, coins: 100 },
-    { name: "Pechu", position: 2, coins: 50 },
-    { name: "Coqui", position: 3, coins: 20 },
-  ];
 
   return (
     <>
