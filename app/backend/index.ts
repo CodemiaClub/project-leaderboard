@@ -6,7 +6,9 @@ import { tableRouter } from "./routes/tableRouter";
 const app: Express = express();
 
 if (!process.env.PORT) {
-  throw new Error("Env PORT must be set");
+  throw new Error(
+    "No PORT environment variable found. Please refer to README.md for more info.",
+  );
 }
 const port = process.env.PORT;
 app.use("/table", tableRouter);

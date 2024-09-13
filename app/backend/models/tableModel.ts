@@ -1,11 +1,15 @@
 import { google } from "googleapis";
 
 if (!process.env.SPREADSHEETID) {
-  throw new Error("No SPREADSHEETID found");
+  throw new Error(
+    "No SPREADSHEETID environment variable found. Please refer to README.md for more info.",
+  );
 }
 
 if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-  throw new Error("No path to credentials found");
+  throw new Error(
+    "No GOOGLE_APPLICATION_CREDENTIALS environment variable found. Please refer to README.md for more info.",
+  );
 }
 const spreadsheetID = process.env.SPREADSHEETID;
 
@@ -24,7 +28,7 @@ async function fetchSheet() {
 async function fetchFormattedData() {
   const rawData = await fetchSheet();
   if (!Array.isArray(rawData)) {
-    throw new Error("Error: Empty spreadsheet");
+    throw new Error("Empty spreadsheet");
   }
   const [header, ...rows] = rawData;
   const formattedData = rows.map((row) => {
