@@ -18,19 +18,17 @@ const CardContent = () => {
           posición!
         </h2>
       </div>
-      <div className="flex flex-row w-full justify-around mt-20 items-center text-xl">
+
+      <div className="flex justify-center w-full p-3">
+        <div className="flex-row border-slate-700 border-2 rounded-lg">
+          <Filter />
+        </div>
+      </div>
+      <div className="flex flex-row w-full justify-around mt-10 items-center text-xl">
         <p className="font-medium w-1/3 text-start ml-2">Posición</p>
         <p className="font-medium w-1/3 text-center ml-4">Nombre</p>
         <p className="font-medium w-1/3 text-right mr-8">COINS</p>
       </div>
-
-      <div className="flex justify-center w-full p-2">
-        <div className="flex-row border-slate-700 border-2 rounded-lg">
-          <Filter />
-          <button>O</button>
-        </div>
-      </div>
-
       <div>
         {results.length === 0 ? (
           <div className="w-full flex justify-center p-5 text-xl">

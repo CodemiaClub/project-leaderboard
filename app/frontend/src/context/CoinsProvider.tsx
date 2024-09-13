@@ -9,7 +9,7 @@ interface IUser {
 
 export interface CoinsContextProps {
   filter;
-  filterer: (e) => void;
+  handleFilterChange: (e) => void;
   results: IUser[];
 }
 
@@ -21,28 +21,17 @@ const CoinsProvider = ({ children }: PropsWithChildren) => {
     { name: "", position: 0, coins: 0 },
   ];
 
-  //FILTRO USESTATE
-
   const [filter, setFilter] = useState("");
 
-  //busqueda
-
-  const filterer = (e) => {
+  const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
 
-  // filtrador
-  let results: IUser[] = [];
-  if (!filter) {
-    results = users;
-  } else {
+  let results: IUser[] = users;
+  if (filter) {
     results = users.filter((username) =>
-      username.name.toLowerCase().startsWith(filter.toLocaleLowerCase()),
+      username.name.toLocaleLowerCase().startsWith(filter.toLocaleLowerCase()),
     );
-
-    if (results.length == 0) {
-      console.log("noresults");
-    }
   }
 
   return (
@@ -50,7 +39,7 @@ const CoinsProvider = ({ children }: PropsWithChildren) => {
       value={{
         results,
         filter,
-        filterer,
+        handleFilterChange,
       }}
     >
       {children}
