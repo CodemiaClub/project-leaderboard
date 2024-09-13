@@ -1,5 +1,5 @@
-import Footer from "./Footer";
 import CardContent from "./CardContent";
+import Footer from "./Footer";
 
 export const App = () => {
   return (

@@ -1,4 +1,17 @@
+import Row from "./Row";
+
 const CardContent = () => {
+  interface IUser {
+    name: string;
+    position: number;
+    coins: number;
+  }
+
+  const users: IUser[] = [
+    { name: "", position: 0, coins: 0 },
+    { name: "", position: 0, coins: 0 },
+  ];
+
   return (
     <>
       <div>
@@ -13,12 +26,15 @@ const CardContent = () => {
       </div>
       <div className="flex flex-row w-full justify-around mt-20 items-center text-xl">
         <p className="font-medium w-1/3 text-start ml-2">Posición</p>
-        <p className="font-medium w-1/3 text-center">Nombre</p>
-        <p className="font-medium w-1/3 text-center">COINS</p>
+        <p className="font-medium w-1/3 text-center ml-4">Nombre</p>
+        <p className="font-medium w-1/3 text-right mr-8">COINS</p>
       </div>
       <div>
-        <div className="border-solid border-slate-500 border-2 w-full h-10 mt-3 mb-3 flex flex-row justify-around items-center text-lg hover:bg-red-500 duration-300"></div>
-        <div className="border-solid border-slate-500 border-2 w-full h-10 mt-3 mb-3 flex flex-row justify-around items-center text-lg hover:bg-red-500 duration-300"></div>
+        {users.map((user) => (
+          <div className="border-solid border-slate-500 border-2 w-full h-10 mt-3 mb-3 flex flex-row justify-around items-center text-lg hover:bg-red-500 duration-300">
+            <Row user={user} />
+          </div>
+        ))}
       </div>
     </>
   );
