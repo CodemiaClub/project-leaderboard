@@ -7,11 +7,10 @@ const CardContent = () => {
     coins: number;
   }
 
-const users: IUser[] = [
+  const users: IUser[] = [
     { name: "", position: 0, coins: 0 },
     { name: "", position: 0, coins: 0 },
   ];
-  
 
   return (
     <>
