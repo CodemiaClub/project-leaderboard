@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "dotenv node build/index",
+    "dev": "npx tsc && dotenv node build/index",
     "dev:watch": "dotenv node --watch build/index",
     "format": "npx prettier . --write",
     "tsc": "npx tsc"
