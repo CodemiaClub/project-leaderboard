@@ -1,25 +1,35 @@
-import { PropsWithChildren, useState } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 import { createContext } from "react";
-
-interface IUser {
-  name: string;
-  position: number;
-  coins: number;
-}
 
 export interface CoinsContextProps {
   filter;
   handleFilterChange: (e) => void;
-  results: IUser[];
+  results;
+  Loading;
 }
 
 const CoinsContext = createContext<CoinsContextProps>({} as CoinsContextProps);
 
 const CoinsProvider = ({ children }: PropsWithChildren) => {
-  const users: IUser[] = [
-    { name: "", position: 0, coins: 0 },
-    { name: "", position: 0, coins: 0 },
-  ];
+  const [users, setUsers] = useState([]);
+  const [Loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("http://localhost:3000/table");
+        const data = await response.json();
+        setUsers(data);
+      } catch (error) {
+        console.error("Datos no cargados:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const [filter, setFilter] = useState("");
 
@@ -27,10 +37,10 @@ const CoinsProvider = ({ children }: PropsWithChildren) => {
     setFilter(e.target.value);
   };
 
-  let results: IUser[] = users;
+  let results = users;
   if (filter) {
     results = users.filter((username) =>
-      username.name.toLocaleLowerCase().startsWith(filter.toLocaleLowerCase()),
+      username.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()),
     );
   }
 
@@ -40,6 +50,7 @@ const CoinsProvider = ({ children }: PropsWithChildren) => {
         results,
         filter,
         handleFilterChange,
+        Loading,
       }}
     >
       {children}

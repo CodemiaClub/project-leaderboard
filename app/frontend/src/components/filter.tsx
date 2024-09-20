@@ -8,8 +8,8 @@ export const Filter = () => {
     <input
       value={filter}
       onChange={handleFilterChange}
-      type="text"
       placeholder="Filtrar por nombre"
+      type="text"
       className="h-5 bg-transparent outline-none"
     />
   );
