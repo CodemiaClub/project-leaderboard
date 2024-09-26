@@ -5,26 +5,29 @@ export interface CoinsContextProps {
   filter;
   handleFilterChange: (e) => void;
   results;
-  Loading;
+  loading;
+  error;
 }
 
 const CoinsContext = createContext<CoinsContextProps>({} as CoinsContextProps);
 
 const CoinsProvider = ({ children }: PropsWithChildren) => {
   const [users, setUsers] = useState([]);
-  const [Loading, setLoading] = useState(false);
-
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
       try {
-        const response = await fetch("http://localhost:3000/table");
+        const response = await fetch(`${process.env.URL}/table`);
         const data = await response.json();
         setUsers(data);
-      } catch (error) {
-        console.error("Datos no cargados:", error);
-      } finally {
+      }  catch (error){
+        setError(true);
+      }
+      
+      finally {
         setLoading(false);
+        setError(false);
       }
     };
 
@@ -50,7 +53,8 @@ const CoinsProvider = ({ children }: PropsWithChildren) => {
         results,
         filter,
         handleFilterChange,
-        Loading,
+        loading,
+        error,
       }}
     >
       {children}

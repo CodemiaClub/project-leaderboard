@@ -4,7 +4,7 @@ import CoinsContext from "context/CoinsProvider";
 import { Filter } from "./filter";
 
 const CardContent = () => {
-  const { results, Loading } = useContext(CoinsContext);
+  const { results, loading, error} = useContext(CoinsContext);
 
   return (
     <>
@@ -30,9 +30,13 @@ const CardContent = () => {
         <p className="font-medium w-1/3 text-center">COINS</p>
       </div>
       <div>
-        {Loading ? (
+        {loading ? (
           <div className="w-full flex justify-center p-5 text-xl">
             <span className="text-center italic">Cargando...</span>
+          </div>
+        ) : error ? (
+          <div className="w-full flex justify-center p-5 text-xl">
+            <span className="text-center">No se pudieron cargar los datos</span>
           </div>
         ) : results.length === 0 ? (
           <div className="w-full flex justify-center p-5 text-xl">
