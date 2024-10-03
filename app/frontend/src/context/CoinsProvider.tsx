@@ -21,11 +21,9 @@ const CoinsProvider = ({ children }: PropsWithChildren) => {
         const response = await fetch(`${process.env.URL}/table`);
         const data = await response.json();
         setUsers(data);
-      }  catch (error){
+      } catch (error) {
         setError(true);
-      }
-      
-      finally {
+      } finally {
         setLoading(false);
         setError(false);
       }

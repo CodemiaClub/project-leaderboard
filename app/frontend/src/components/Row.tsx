@@ -8,8 +8,8 @@ const Row = ({ user }) => {
 
   return (
     <>
-      <div className="w-1/3 flex flex-row justify-center">
-        <div className="flex flex-row justify-center">
+      <div className="w-1/3 flex flex-row justify-center text-slate-100">
+        <div className="flex flex-row justify-center ">
           {position === 1 && <FirstIcon />}
           {position === 2 && <SecondIcon />}
           {position === 3 && <ThirdIcon />}
@@ -18,8 +18,8 @@ const Row = ({ user }) => {
           )}
         </div>
       </div>
-      <p className="font-bold w-1/3 text-center ">{name}</p>
-      <div className="w-1/3 flex flex-row align-middle justify-center">
+      <p className="font-bold w-1/3 text-center text-slate-100">{name}</p>
+      <div className="w-1/3 flex flex-row align-middle justify-center text-slate-100 items-center">
         {coins !== 0 && <p className="font-bold text-center pr-2">{coins}</p>}
         {coins !== 0 && <CoinsIcon />}
       </div>
