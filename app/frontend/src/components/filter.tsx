@@ -10,7 +10,7 @@ export const Filter = () => {
       onChange={handleFilterChange}
       placeholder="Filtrar por nombre"
       type="text"
-      className="h-5 bg-transparent outline-none"
+      className="h-5 bg-transparent outline-none placeholder:p w-full pl-1 text-white font-lato"
     />
   );
 };
