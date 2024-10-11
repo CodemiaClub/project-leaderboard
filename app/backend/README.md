@@ -93,5 +93,5 @@ npm run format
 ### Scripts
 
 - `dev:` Compila el código TypeScript y ejecuta el servidor de desarrollo.
-- `dev:watch` Ejecuta el servidor de desarrollo con monitoreo de cambios.
-- `format` Aplica el formato del código con Prettier.
+- `dev:watch:` Ejecuta el servidor de desarrollo con monitoreo de cambios.
+- `format:` Aplica el formato del código con Prettier.
