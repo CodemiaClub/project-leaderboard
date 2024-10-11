@@ -8,16 +8,15 @@
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [Scripts](#scripts)
-- [Contribuyentes](#contribuyentes)
 
 ### Stack
 
-- **Node.js:** Entorno de ejecución para JavaScript en el lado del servidor.
-- **Express:** Framework para Node.js.
-- **TypeScript:** Lenguaje de programación fuertemente tipado que se basa en JavaScript.
-- **Google APIs:** Para interactuar con diversos servicios de Google.
-- **dotenv-cli:** Para cargar variables de entorno desde un archivo .env.
-- **Prettier:** Para formatear el código.
+- Node.js
+- Express
+- TypeScript
+- Google APIs
+- dotenv-cli
+- Prettier
 
 ### Instalación
 
@@ -26,7 +25,7 @@ Para instalar y configurar el proyecto, seguir los siguientes pasos:
 1. Clonar el repositorio:
 
    ```sh
-   git clone git clone https://github.com/CodemiaClub/project-leaderboard.git
+   git clone https://github.com/CodemiaClub/project-leaderboard.git
 
    ```
 
@@ -88,7 +87,7 @@ Para hacer una prueba de la API ir a http://localhost:3000/table .
 Para formatear el código, ejecutar:
 
 ```sh
-npx prettier . --write
+npm run format
 ```
 
 ### Scripts
@@ -96,8 +95,3 @@ npx prettier . --write
 - `dev:` Compila el código TypeScript y ejecuta el servidor de desarrollo.
 - `dev:watch` Ejecuta el servidor de desarrollo con monitoreo de cambios.
 - `format` Aplica el formato del código con Prettier.
-
-### Contribuyentes
-
-- [@andresfernandez89](https://github.com/andresfernandez89)
-- [@Ale2301](https://github.com/Ale2301)
