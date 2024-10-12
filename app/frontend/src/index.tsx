@@ -1,9 +1,9 @@
 import { createRoot } from "react-dom/client";
 import { App } from "./components/App";
 
-if (!process.env.NODEJS_URI) {
+if (!process.env.URL) {
   throw new Error(
-    "No NODEJS_URI environment variable found. Please refer to README.md for more info.",
+    "No URL environment variable found. Please refer to README.md for more info.",
   );
 }
 
