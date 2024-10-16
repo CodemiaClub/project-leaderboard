@@ -29,7 +29,7 @@ const CardContent = () => {
         <p className="font-medium w-1/3 text-center">Nombre</p>
         <p className="font-medium w-1/3 text-center">COINS</p>
       </div>
-      <div>
+      <div className="overflow-auto">
         {loading ? (
           <div className="w-full flex justify-center p-5 text-xl">
             <span className="text-center italic font-lato text-slate-100">
