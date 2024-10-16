@@ -1,5 +1,4 @@
-import { PropsWithChildren, useEffect, useState } from "react";
-import { createContext } from "react";
+import { createContext, PropsWithChildren, useEffect, useState } from "react";
 
 export interface CoinsContextProps {
   filter;
@@ -18,7 +17,7 @@ const CoinsProvider = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${process.env.URL}/table`);
+        const response = await fetch(`${process.env.NODEJS_URI}/table`);
         const data = await response.json();
         setUsers(data);
       } catch (error) {
