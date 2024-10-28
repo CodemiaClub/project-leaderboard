@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import Row from "./Row";
 import CoinsContext from "context/CoinsProvider";
+import { useContext } from "react";
 import { Filter } from "./filter";
+import Row from "./Row";
 
 const CardContent = () => {
   const { results, loading, error } = useContext(CoinsContext);
@@ -9,11 +9,11 @@ const CardContent = () => {
   return (
     <>
       <div>
-        <h1 className="font-bold text-center text-6xl mb-5 mt-7 text-Codemia-orange font-lato">
+        <h1 className="font-bold text-center text-5xl md:text-6xl mb-5 mt-7 text-Codemia-orange font-lato">
           Leaderboard
         </h1>
 
-        <h2 className=" text-center text-2xl mb-5 text-slate-100 font-lato">
+        <h2 className=" text-center text-xl md:text-2xl mb-5 text-slate-100 font-lato">
           ¡Colabora en proyectos y tareas para conseguir Coins y subir de
           posición!
         </h2>
@@ -24,10 +24,10 @@ const CardContent = () => {
           <Filter />
         </div>
       </div>
-      <div className="flex flex-row w-full justify-around mt-8 items-center text-2xl text-Codemia-green font-lato">
-        <p className="font-medium w-1/3 text-center">Posición</p>
-        <p className="font-medium w-1/3 text-center">Nombre</p>
-        <p className="font-medium w-1/3 text-center">COINS</p>
+      <div className="flex flex-row w-full justify-around mt-8 items-center text-xl md:text-2xl text-Codemia-green font-lato">
+        <p className="font-medium w-1/4 text-center">Posición</p>
+        <p className="font-medium w-2/4 text-center">Nombre</p>
+        <p className="font-medium w-1/4 text-center">COINS</p>
       </div>
       <div className="overflow-y-auto">
         {loading ? (
@@ -47,7 +47,7 @@ const CardContent = () => {
         ) : (
           <div>
             {results.map((user) => (
-              <div className="rounded-lg border-solid border-Codemia-blue border-2 w-full h-10 mt-3 mb-3 flex flex-row justify-around items-center text-lg hover:bg-Codemia-blue/[.5] duration-300 font-lato">
+              <div className="rounded-lg border-solid border-Codemia-blue border-2 w-full h-10 mt-3 mb-3 flex flex-row justify-around items-center text-base md:text-lg hover:bg-Codemia-blue/[.5] duration-300 font-lato">
                 <Row user={user} />
               </div>
             ))}
