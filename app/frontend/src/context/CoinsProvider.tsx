@@ -17,7 +17,7 @@ const CoinsProvider = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${process.env.URL}/table`);
+        const response = await fetch(`${process.env.NODEJS_URI}/table`);
         const data = await response.json();
         setUsers(data);
       } catch (error) {
