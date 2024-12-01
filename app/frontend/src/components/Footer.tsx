@@ -11,7 +11,7 @@ const Footer = () => (
       </div>
       <div className="h-[50px]">
         <img
-          className="aspect-square w-[50px] h-full"
+          className="aspect-square w-[43px] h-full"
           src={logo}
           alt="Logo de Codemia"
         />
