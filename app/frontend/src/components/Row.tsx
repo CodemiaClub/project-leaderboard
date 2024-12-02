@@ -9,7 +9,7 @@ const Row = ({ user }) => {
   return (
     <>
       <div className="w-1/4 flex flex-row justify-center text-slate-100">
-        <div className="flex flex-row justify-center ">
+        <div className="flex flex-row justify-center">
           {position === 1 && <FirstIcon />}
           {position === 2 && <SecondIcon />}
           {position === 3 && <ThirdIcon />}
