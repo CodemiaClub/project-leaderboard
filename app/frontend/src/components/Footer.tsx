@@ -9,13 +9,8 @@ const Footer = () => (
           de Codemia bajo supervisión técnica.
         </p>
       </div>
-      <div className="h-[50px]">
-        <img
-          className="aspect-square w-[43px] h-full"
-          src={logo}
-          alt="Logo de Codemia"
-        />
-      </div>
+
+      <img className="h-[50px] w-[43px]" src={logo} alt="Logo de Codemia" />
     </div>
   </footer>
 );
